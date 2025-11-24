@@ -6,6 +6,7 @@ This is the backend API for the KickForecast application, built with FastAPI. It
 
 - Python 3.8+
 - PostgreSQL
+- [Poetry](https://python-poetry.org/docs/#installation)
 
 ## Setup
 
@@ -15,15 +16,9 @@ This is the backend API for the KickForecast application, built with FastAPI. It
     cd kickforecast-backend
     ```
 
-2.  **Create a virtual environment:**
+2.  **Install dependencies:**
     ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows: venv\Scripts\activate
-    ```
-
-3.  **Install dependencies:**
-    ```bash
-    pip install -r requirements.txt
+    poetry install
     ```
 
 ## Configuration
@@ -46,13 +41,13 @@ This is the backend API for the KickForecast application, built with FastAPI. It
 1.  **Run Migrations:**
     Apply the database schema using Alembic:
     ```bash
-    alembic upgrade head
+    poetry run alembic upgrade head
     ```
 
 2.  **Seed Database:**
     Populate the database with initial data:
     ```bash
-    python seed.py
+    poetry run python seed.py
     ```
 
 ## Running the Application
@@ -60,7 +55,7 @@ This is the backend API for the KickForecast application, built with FastAPI. It
 Start the development server:
 
 ```bash
-uvicorn app.main:app --reload
+poetry run uvicorn app.main:app --reload
 ```
 
 The API will be available at `http://localhost:8000`.
