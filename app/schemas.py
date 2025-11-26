@@ -30,6 +30,8 @@ class PostBase(BaseModel):
     away_team: Optional[str] = None
     prediction: Optional[str] = None
     odds: Optional[str] = None
+    hero_image: Optional[str] = None
+    og_image: Optional[str] = None
 
 class PostCreate(PostBase):
     pass

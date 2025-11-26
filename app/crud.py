@@ -23,6 +23,9 @@ def get_posts(db: Session, skip: int = 0, limit: int = 100):
 def get_public_posts(db: Session, skip: int = 0, limit: int = 100):
     return db.query(models.Post).filter(models.Post.is_published == True).offset(skip).limit(limit).all()
 
+def get_draft_posts(db: Session, skip: int = 0, limit: int = 100):
+    return db.query(models.Post).filter(models.Post.is_published == False).offset(skip).limit(limit).all()
+
 def get_post(db: Session, post_id: int):
     return db.query(models.Post).filter(models.Post.id == post_id).first()
 

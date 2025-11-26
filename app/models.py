@@ -38,5 +38,7 @@ class Post(Base):
     away_team = Column(String, nullable=True)
     prediction = Column(String, nullable=True)
     odds = Column(String, nullable=True)
+    hero_image = Column(String, nullable=True)
+    og_image = Column(String, nullable=True)
 
     author = relationship("User", back_populates="posts")

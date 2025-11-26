@@ -114,6 +114,18 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+.idea/
+.vscode/
+.python-version
+
+# Alembic
+alembic/versions/*.pyc
+alembic/versions/__pycache__/
+alembic/versions/*.swp
+alembic/versions/*.orig
+
+# Local media/uploads
+app/media/
 
 # Spyder project settings
 .spyderproject
